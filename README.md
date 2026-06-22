@@ -6,8 +6,8 @@ Example of [default widget settings](https://i.imgur.com/ymPmM9x.png)
 1. Download besiegedwidget.lua, settings.lua and each folder. besiegedwidget.lua and the folders can be found in the zip file under [Releases](https://github.com/darkewaffle/BesiegedWidget/releases). You only need to download the settings file if you do not already have one - although it could change over time if new settings are supported.
 2. Place them in Windower\addons\BesiegedWidget.
 3. Modify settings.lua to your liking.
-3b. If you are so inclined you can overwrite the .wav files in the notify folder so that your own custom sounds play to announce higher besieged levels.
-4. "lua l besiegedwidget" in game to initialize the addon.
+4. If you are so inclined you can overwrite the .wav files in the notify folder so that your own custom sounds play to announce higher besieged levels.
+5. "lua l besiegedwidget" in game to initialize the addon.
 
 ## Description
 BesiegedWidget is a simple UI addition that will display the current besieged levels without needing to manually open Region Info. It will update this information anytime new Region Info is received by the client - this occurs every time you zone or when you open Region Info (but you will only receive new data from the server approximately every two minutes). Additionally anytime you are in a non-instanced 'real world' zone BesiegedWidget will automatically send a packet to request new Region Info every ten minutes.
