@@ -13,7 +13,7 @@ require "ui/display"
 PLAYER_SETTINGS = require "settings"
 
 local RegisteredEventIDs = {}
-local MamoolJaLevel = 1
+local MamoolJaLevel = 0
 local TrollLevel = 0
 local UndeadLevel = 0
 local MaxLevelLastUpdate = 0
@@ -86,7 +86,7 @@ function GetRegionInfo()
 	local RegionPacket = WINDOWER_PACKETS.new('outgoing', 0x05A)
 	WINDOWER_PACKETS.inject(RegionPacket)
 	ScheduleGetRegionInfo()
-	windower.add_to_chat(1, "Update request sent on " .. os.date("%X", os.time()))
+	--windower.add_to_chat(1, "Update request sent on " .. os.date("%X", os.time()))
 end
 
 function ScheduleGetRegionInfo()
