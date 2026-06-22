@@ -27,5 +27,7 @@ BesiegedWidget does inject one packet in order to request new Region Info. This 
 Drum sound effects used for notifications
 
 'Small' level 8-9 = 'African Drum4.WAV by eyenorth -- https://freesound.org/s/460084/ -- License: Attribution 4.0
+
 'Medium' level 10-11 = Doumbek_Doum3.wav by pjcohen -- https://freesound.org/s/413805/ -- License: Attribution 4.0
+
 'Big' level 12-13 = djembe_roll2.wav by Infinita08 -- https://freesound.org/s/460977/ -- License: Creative Commons 0
