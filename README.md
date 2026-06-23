@@ -1,5 +1,7 @@
 # BesiegedWidget
 
+## EDIT: Apologies, it appears I have something incorrect in the coroutine handling for the update and it seems to be causing crashes when it tries to send the update after zoning. I'd recommend unloading the addon for the time being ><
+
 Example of [default widget settings](https://i.imgur.com/ymPmM9x.png)
 
 ## How To
