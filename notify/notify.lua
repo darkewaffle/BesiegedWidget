@@ -6,7 +6,7 @@ local NotifySmall = NotifyRoot .. "small.wav"
 -- Numeric indexes in Lua start at 1 so this is actually Besieged Level +1
 local NotifySoundLevelMap =
 {
-	[1] = NotifySmall,
+	[1] = nil,
 	[2] = nil,
 	[3] = nil,
 	[4] = nil,
@@ -30,8 +30,10 @@ end
 
 function ChatNotify(Level)
 	if PLAYER_SETTINGS.notify.chat then
-		local ChatMessage = "- - - Besieged level has reached " .. Level .. " - - -"
-		windower.add_to_chat(1, ChatMessage)
+		if Level > 0 then
+			local ChatMessage = "- - - Besieged level has reached " .. Level .. " - - -"
+			windower.add_to_chat(1, ChatMessage)
+		end
 	end
 end
 
