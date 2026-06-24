@@ -1,5 +1,5 @@
 _addon.name = "BesiegedWidget"
-_addon.version = "0.9.1"
+_addon.version = "0.9.2"
 _addon.author = "darkwaffle"
 _addon.command = "bwi"
 

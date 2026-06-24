@@ -1,6 +1,6 @@
 # BesiegedWidget
 
-## EDIT: Apologies, it appears I have something incorrect in the coroutine handling for the update and it seems to be causing crashes when it tries to send the update after zoning. I'd recommend unloading the addon for the time being ><
+## Notice: If you downloaded release 0.9.1 please update to at least 0.9.2 to avoid a potential crash.
 
 Example of [default widget settings](https://i.imgur.com/ymPmM9x.png)
 
@@ -12,7 +12,7 @@ Example of [default widget settings](https://i.imgur.com/ymPmM9x.png)
 5. "lua l besiegedwidget" in game to initialize the addon.
 
 ## Description
-BesiegedWidget is a simple UI addition that will display the current besieged levels without needing to manually open Region Info. It will update this information anytime new Region Info is received by the client - this occurs every time you zone or when you open Region Info (but you will only receive new data from the server approximately every two minutes). Additionally anytime you are in a non-instanced 'real world' zone BesiegedWidget will automatically send a packet to request new Region Info every ten minutes.
+BesiegedWidget is a simple UI addition that will display the current besieged levels without needing to manually open Region Info. It will update this information anytime new Region Info is received by the client - this occurs every time you zone or when you open Region Info (but you can only receive new data from the server approximately every two minutes). Additionally anytime you are in a non-instanced 'real world' zone BesiegedWidget will automatically send a packet to request new Region Info every ten minutes.
 
 BesiegedWidget will also provide notifications when the highest current besieged level changes. These can be messages in your chat log that will occur every time the level changes or sound effects that are played anytime the highest level becomes >= 8. Both types of notifications can be disabled in the settings if you prefer.
 
@@ -23,6 +23,7 @@ BesiegedWidget does inject one packet in order to request new Region Info. This 
 | --- | --- |
 | bwi show | Show the widget if hidden. |
 | bwi hide | Hide the widget if visible. |
+| bwi debug | Enable debug messages in the chat log to report when Region Info is recieved, requested and how long the request loop is asleep (time to next run). |
 
 - - - -
 
