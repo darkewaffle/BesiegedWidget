@@ -1,6 +1,6 @@
 local AllowRegionUpdates = false
 local LastRegionUpdate = os.time()
-local RegionInfoInterval = 600
+local RegionInfoInterval = 599
 
 function InitiateRegionUpdates()
 	GetRegionUpdates()
@@ -9,7 +9,10 @@ end
 function GetRegionUpdates()
 	while true do
 
-		local SleepDuration = RegionInfoInterval
+		-- +1 to account for the latency on receiving the region update
+		-- this just means that the it won't sleep for 9m59s, check time, sleep for 1s, activate, sleep for 9m59s and repeat
+		-- it should just sleep for 10m, activate, repeat
+		local SleepDuration = RegionInfoInterval + 1
 		
 		if GetTimeSinceLastRegionUpdate() < RegionInfoInterval then
 			SleepDuration = RegionInfoInterval - GetTimeSinceLastRegionUpdate()
