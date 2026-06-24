@@ -18,6 +18,7 @@ local MamoolJaLevel = 0
 local TrollLevel = 0
 local UndeadLevel = 0
 local MaxLevelLastUpdate = 0
+local ShowDebugMessages = false
 
 function OnLoad()
 	table.insert(RegisteredEventIDs, windower.register_event('unload', OnUnload))
@@ -65,6 +66,7 @@ function OnChunkIn(id, original, modified, injected, blocked)
 		SetBesiegedLevels(Mamool, Troll, Undead)
 		UpdateWidget()
 		SetLastRegionUpdate()
+		DebugMessage("Region update recieved")
 
 	-- Zone change starting
 	elseif id == 0x00B then
@@ -79,6 +81,8 @@ function OnCommand(...)
 		ShowWidget()
 	elseif CommandParameters[1] == "hide" then
 		HideWidget()
+	elseif CommandParameters[1] == "debug" then
+		SetDebugMessages()
 	end
 end
 
@@ -96,6 +100,22 @@ function SetBesiegedLevels(Mamool, Troll, Undead)
 	MamoolJaLevel = Mamool
 	TrollLevel = Troll
 	UndeadLevel = Undead
+end
+
+function SetDebugMessages()
+	ShowDebugMessages = not ShowDebugMessages
+
+	if ShowDebugMessages then
+		print("BesiegedWidget debug messages will be placed in the chat log.")
+	else
+		print("BesiegedWidget debug messages disabled.")
+	end
+end
+
+function DebugMessage(Message)
+	if ShowDebugMessages then
+		windower.add_to_chat(161, "BWI:" .. os.date(" %X ", os.time()) .. Message)
+	end
 end
 
 OnLoad()
